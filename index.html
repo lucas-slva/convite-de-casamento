@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas & Aline</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      background-color: rgba(128, 0, 0, 0.85);
+      color: white;
+      padding: 12px 18px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: rgba(100, 0, 0, 0.95);
+    }
+  </style>
+</head>
+<body>
+  <div class="buttons">
+    <a href="https://maps.app.goo.gl/p85pWPtNhra6shN78" class="btn" target="_blank">Cerimônia</a>
+    <a href="https://maps.app.goo.gl/ucPgUVBScLmr5hKT6" class="btn" target="_blank">Recepção</a>
+    <a href="https://forms.gle/FczfjKncpM2DTZPz9" class="btn" target="_blank">Confirmar presença</a>
+  </div>
+
+  <script>
+    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+    const bg = isMobile ? "background-mobile.png" : "background-desktop.png";
+    document.body.style.backgroundImage = `url('${bg}')`;
+  </script>
+</body>
+</html>
