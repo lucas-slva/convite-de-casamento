@@ -17,48 +17,49 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
     }
 
-    .buttons {
+    .click-zone {
       position: absolute;
-      bottom: 30px;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
+      z-index: 10;
     }
 
-    .btn {
-      background-color: rgba(128, 0, 0, 0.85);
-      color: white;
-      padding: 12px 18px;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
+    .mobile .zone1,
+    .mobile .zone2,
+    .mobile .zone3 {
+      width: 32vw;
+      height: 10vw;
+      left: 4vw;
+      bottom: 13vw;
     }
 
-    .btn:hover {
-      background-color: rgba(100, 0, 0, 0.95);
+    .mobile .zone2 { left: 34vw; }
+    .mobile .zone3 { left: 66vw; }
+
+    .desktop .zone1,
+    .desktop .zone2,
+    .desktop .zone3 {
+      width: 170px;
+      height: 60px;
+      bottom: 40px;
     }
+
+    .desktop .zone1 { left: calc(50% - 270px); }
+    .desktop .zone2 { left: calc(50% - 85px); }
+    .desktop .zone3 { left: calc(50% + 100px); }
   </style>
 </head>
 <body>
-  <div class="buttons">
-    <a href="https://maps.app.goo.gl/p85pWPtNhra6shN78" class="btn" target="_blank">Cerimônia</a>
-    <a href="https://maps.app.goo.gl/ucPgUVBScLmr5hKT6" class="btn" target="_blank">Recepção</a>
-    <a href="https://forms.gle/FczfjKncpM2DTZPz9" class="btn" target="_blank">Confirmar presença</a>
-  </div>
+  <a href="https://maps.app.goo.gl/p85pWPtNhra6shN78" class="click-zone zone1" target="_blank"></a>
+  <a href="https://maps.app.goo.gl/ucPgUVBScLmr5hKT6" class="click-zone zone2" target="_blank"></a>
+  <a href="https://forms.gle/FczfjKncpM2DTZPz9" class="click-zone zone3" target="_blank"></a>
 
   <script>
     const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+    const body = document.body;
     const bg = isMobile ? "background-mobile.png" : "background-desktop.png";
     document.body.style.backgroundImage = `url('${bg}')`;
+    body.classList.add(isMobile ? "mobile" : "desktop");
   </script>
 </body>
 </html>
